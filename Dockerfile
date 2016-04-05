@@ -1,4 +1,4 @@
-FROM golang
+FROM phusion/baseimage:0.9.15
 
 WORKDIR /tmp
 
@@ -7,6 +7,6 @@ ADD https://github.com/rancher/rancher-compose/releases/download/v0.7.3/rancher-
 RUN tar xzvf rancher-compose-linux-amd64-v0.7.3.tar.gz && \
     mv rancher-compose-v0.7.3/rancher-compose /usr/bin && \
     apt-get update && \
-    apt-get install -y nfs-client && \
+    apt-get install -y nfs-client nfs-common && \
     rm -rf /var/lib/apt/lists/* && \
     rm -Rf /tmp/*
