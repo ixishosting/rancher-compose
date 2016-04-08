@@ -1,3 +1,3 @@
 # Docker Rancher Compose Image
 
-An image extending golang to include the rancher-compose command (v0.7.3) and nfs
+Docker image built from frolvlad/alpine-glibc with rancher-compose added.

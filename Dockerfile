@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.15
+FROM frolvlad/alpine-glibc
 
 WORKDIR /tmp
 
@@ -6,7 +6,4 @@ ADD https://github.com/rancher/rancher-compose/releases/download/v0.7.3/rancher-
 
 RUN tar xzvf rancher-compose-linux-amd64-v0.7.3.tar.gz && \
     mv rancher-compose-v0.7.3/rancher-compose /usr/bin && \
-    apt-get update && \
-    apt-get install -y nfs-client nfs-common rpcbind && \
-    rm -rf /var/lib/apt/lists/* && \
     rm -Rf /tmp/*
